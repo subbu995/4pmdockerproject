@@ -75,35 +75,35 @@ systemctl restart docker.service
 version: '3'
 services:
   movies:
-    image: siva995912345/moviesservice:latest
+    image: siva995912345/movies
     ports:
       - "80:80"
     deploy:
       replicas: 3
 
   train:
-    image: siva995912345/trainservice:latest
+    image: siva995912345/trains
     ports:
       - "81:80"
     deploy:
       replicas: 3
 
   dth:
-    image: siva995912345/dthservice:latest
+    image: siva995912345/dth
     ports:
       - "82:80"
     deploy:
       replicas: 3
 
   recharge:
-    image: siva995912345/rechargeservice:latest
+    image: siva995912345/recharge
     ports:
       - "83:80"
     deploy:
       replicas: 3
 
 6. STACK:
-jenkins-new item-name:.......-pipeline-ok
+jenkins->new item->name:.......->pipeline->ok
 SENTAK:
 pipeline {
     agent any 
