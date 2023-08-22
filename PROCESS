@@ -71,38 +71,57 @@ systemctl daemon-reload
 systemctl restart docker.service
 
 5. COMPOSE FILE
-
+        vim docker-compose.yml
 version: '3'
 services:
   movies:
-    image: rahamshaik/moviesservice:latest
+    image: siva995912345/moviesservice:latest
     ports:
       - "80:80"
     deploy:
       replicas: 3
 
   train:
-    image: rahamshaik/trainservice:latest
+    image: siva995912345/trainservice:latest
     ports:
       - "81:80"
     deploy:
       replicas: 3
 
   dth:
-    image: rahamshaik/dthservice:latest
+    image: siva995912345/dthservice:latest
     ports:
       - "82:80"
     deploy:
       replicas: 3
 
   recharge:
-    image: rahamshaik/rechargeservice:latest
+    image: siva995912345/rechargeservice:latest
     ports:
       - "83:80"
     deploy:
       replicas: 3
 
 6. STACK:
+jenkins-new item-name:.......-pipeline-ok
+SENTAK:
+pipeline {
+    agent any 
+    
+    stages {
+        stage('Hello') {
+            steps {
+                git 'https://github.com/subbu995/4pmdockerproject.git'
+            }
+        }
+        stage('stack') {
+            steps {
+                sh 'docker stack  deploy -c docker-compose.yml siva'
+            }
+        }
+    }
+}
+
 docker stack deploy -c docker-compose.yml raham
 
 7. HISTORY:
